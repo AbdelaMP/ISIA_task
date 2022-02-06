@@ -47,6 +47,19 @@ public class Matriz {
         } 
         return matrizResultante; 
     } 
+    
+    public static Matriz invertirMatriz(Matriz m){ 
+        int i, j, filas, columnas; 
+        filas = m.getDimension().height; 
+        columnas = m.getDimension().width; 
+        Matriz matrizResultante = new Matriz(filas, columnas, false);
+        for (j = 0; j < filas; j++) { 
+            for (i = 0; i < columnas; i++) { 
+                matrizResultante.datos[j][i] += m.datos[i][j]; 
+            } 
+        } 
+        return matrizResultante; 
+    } 
 
     @Override
     public String toString(){
